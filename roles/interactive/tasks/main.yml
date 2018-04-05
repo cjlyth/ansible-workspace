@@ -1,0 +1,12 @@
+- name: 'checking ll alias'
+  lineinfile:
+    path: '~/.bashrc'
+    line: "alias ll='ls -alF'"
+- name: 'checking la alias'
+  lineinfile:
+    path: '~/.bashrc'
+    line: "alias la='ls -A'"
+- name: 'checking l alias'
+  lineinfile:
+    path: '~/.bashrc'
+    line: "alias l='ls -CF'"

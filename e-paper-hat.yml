@@ -1,0 +1,6 @@
+- hosts: epapers
+  roles:
+  - interactive
+  - epaper
+  tags:
+  - epaper

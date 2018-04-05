@@ -1,0 +1,17 @@
+---
+- name: Set authorized key
+  authorized_key:
+    user: "{{ remote_user }}"
+    state: present
+    key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
+
+- name: Set hostname
+  hostname: name={{ ansible_host }}
+
+- name: 'Update APT package cache'
+  action: apt update_cache=yes
+
+- name: 'Upgrade APT to the lastest packages'
+  action: apt upgrade=safe
+  notify:
+    - reboot

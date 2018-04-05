@@ -1,0 +1,6 @@
+- hosts: ddclients
+  roles:
+  - ddclient
+  - jgrowl.ddclient
+  tags:
+  - ddclient
